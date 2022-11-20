@@ -2,6 +2,7 @@ import streamlit as st
 import tensorflow as tf
 from tensorflow.keras.applications.imagenet_utils import decode_predictions
 import cv2
+import os
 from pathlib import Path
 from PIL import Image, ImageOps
 import numpy as np
@@ -14,6 +15,7 @@ css_file = current_dir / "styles" / "main.css"
 # --- GENERAL SETTINGS ---
 PAGE_TITLE = "Imange Classfier (VGG19)"
 st.set_page_config(page_title=PAGE_TITLE)
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
 # --- LOAD CSS & SAMPLE DATASET FOR DOWNLOAD ---
 with open(css_file) as f:
